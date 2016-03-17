@@ -29,6 +29,54 @@ var menu = [
     "description": "Thin rice noodles pan-fried in a tamarind sauce with meat of choice, bean sprouts, green onion and egg. Garnished with peanuts, bean sprouts, green onion or chives, and lime.",
     "price": "12.95",
     "category": "noodles"
+  },
+  {
+    "dish": "Drunken Noodles",
+    "description": "Wide rice noodles stir-fried in a spicy roasted chili paste with garlic, onion, carrot, broccoli, cabbage, bell peppers, sweet basil and egg.",
+    "price": "12.95",
+    "category": "noodles"
+  },
+  {
+    "dish": "Rad Na Noodles",
+    "description": "Wide rice noodles in a hearty sesame soy sauce with Chinese rice wine, Chinese broccoli and/or broccoli, fermented soybean, carrot, and 3 mushroom varieties.",
+    "price": "14.95",
+    "category": "noodles"
+  },
+  {
+    "dish": "Tom Yum",
+    "description": "A hot and sour feast of fresh button mushrooms, lemon grass, kaffir lime leaves and exotic roasted spices blended in a seafood broth with lime juice.",
+    "price": "4.95",
+    "category": "soups"
+  },
+  {
+    "dish": "Broken Net",
+    "description": "Mixed seafood treat with shrimp, calamari, scallops, and mussels in a clear hot and sour sweet basil seafood broth.",
+    "price": "9.95",
+    "category": "soups"
+  },
+  {
+    "dish": "Royal Basil Duck",
+    "description": "Crispy and tender fried boneless half of a whole duck with savory holy basil sauce, a crisp medley of fresh vegetables, and garnished with crispy fried basil leaves.",
+    "price": "29.95",
+    "category": "specials"
+  },
+  {
+    "dish": "Volcano or Basil Softshell Crab",
+    "description": "A pair of softshell crabs lightly battered in Panko bread crumbs, served over mixed vegetables in a sizzling pineapple chili volcano sauce.",
+    "price": "23.95",
+    "category": "specials"
+  },
+  {
+    "dish": "Chicken or Shrimp Satay",
+    "description": "Skewered and grilled strips of chicken breast or shrimp marinated in yellow coconut curry served with peanut sauce and cucumber salad.",
+    "price": "8.95",
+    "category": "appetizers"
+  },
+  {
+    "dish": "Shrimp-in-a-Pouch",
+    "description": "Gulf shrimp and chicken in an herbal sesame stuffing, served in a golden-brown wanton pouch with our plum dipping sauce.",
+    "price": "8.95",
+    "category": "appetizers"
   }
   ]
 
