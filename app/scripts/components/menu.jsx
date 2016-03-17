@@ -6,11 +6,13 @@ var Backbone = require('backbone');
 require('backbone-react-component');
 
 var SectionComponent = require('./section.jsx').SectionComponent;
+var CartComponent = require('./cart.jsx').CartComponent;
 
 var MenuComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   getInitialState: function(){
     return{
+      cart: this.props.cartCollection,
       category: "appetizers"
     }
   },
@@ -38,14 +40,13 @@ var MenuComponent = React.createClass({
                       <div className="col-md-9 menu-section-info">
                           <SectionComponent collection={this.props.collection} category={this.state.category}/>
                       </div>
-                      <div className="col-md-3">
-                        <h4>Your Order</h4>
+                      <div className="col-md-3 cart-container">
+                          <CartComponent collection={this.props.cart} />
                       </div>
                     </div>
                   </div>
                   <div className="modal-footer">
                     <button type="button" data-dismiss="modal" onClick={this.handleReturn} className="btn btn-default  menu-modal-footer-btn">Close</button>
-                    <button type="button" className="btn btn-success menu-modal-footer-btn">Order</button>
                   </div>
                 </div>
               </div>
