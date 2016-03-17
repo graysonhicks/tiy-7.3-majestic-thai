@@ -1,0 +1,49 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,900,700)
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+h1,
+h3
+  color: white
+  text-shadow: 2px 2px black
+  font-weight: 100
+  font-family: "Lato"
+img
+  max-width: 100%
+
+header
+  background: linear-gradient(rgba(42, 44, 45, 0.8), rgba(42, 44, 45, 0.8)), url('../images/bg.jpg')
+  background-size: cover
+  background-position: center
+  height: 100%
+  width: 100%
+  padding-top: 200px
+  padding-bottom: 300px
+  text-align: center
+  h1
+    margin-top: 0px
+    font-size: 48px
+  h3
+    font-size: 24px
+
+.main-menu-button
+  border-radius: 0
+  color: #fff
+  background-color: rgba(0,0,0,0.4)
+
+
+.main-menu-button:hover,
+.main-menu-button:focus,
+.main-menu-button:active
+  color: #fff
+  background-color: rgba(0,0,0,0.7)
