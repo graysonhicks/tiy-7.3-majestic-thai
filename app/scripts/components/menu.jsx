@@ -5,6 +5,7 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 
+
 var SectionComponent = require('./section.jsx').SectionComponent;
 var CartComponent = require('./cart.jsx').CartComponent;
 
@@ -40,7 +41,17 @@ var MenuComponent = React.createClass({
     e.preventDefault();
     Backbone.history.navigate("", {trigger: true});
   },
+  checkOut: function(e){
+    e.preventDefault();
+    Backbone.history.navigate("checkout", {trigger: true});
+  },
   render: function(){
+    var disabledBtn;
+    if(this.state.total == 0){
+        disabledBtn = true
+      } else {
+        disabledBtn = false
+      }
     return (
       <div className="modal fade menu-modal-container" id="menuModal" tabIndex="-1" role="dialog" aria-labelledby="menuModalLabel">
         <div className="modal-dialog modal-lg menu-modal-dialog" role="document">
@@ -69,7 +80,7 @@ var MenuComponent = React.createClass({
                 </div>
                 <div className="col-md-3 menu-footer-btn-container">
                   <button type="button" data-dismiss="modal" onClick={this.handleReturn} className="btn btn-default  menu-modal-footer-btn">Close</button>
-                  <button type="button" className="btn btn-success menu-modal-footer-btn">Place Order</button>
+                  <button type="button" onClick={this.checkOut} disabled={disabledBtn} className="btn btn-success checkout-btn menu-modal-footer-btn">Checkout</button>
                 </div>
               </div>
             </div>

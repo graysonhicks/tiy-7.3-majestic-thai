@@ -10,20 +10,20 @@ var IndexComponent = React.createClass({
   handleMenuClick: function(e){
       e.preventDefault();
       Backbone.history.navigate("menu", {trigger: true});
-      $('#menuModal').modal();
   },
   handleHoursClick: function(e){
       e.preventDefault();
       Backbone.history.navigate("hours", {trigger: true});
-      $('#hoursModal').modal();
     },
   render: function(){
           return (
       <header>
         <h1>Sukho Thai</h1>
         <h3>Greenvilles Premier Thai Restaurant</h3>
-        <button href="#" onClick={this.handleMenuClick} className="btn btn-dark btn-lg main-menu-button">Menu</button>
-        <button href="#" onClick={this.handleHoursClick} className="btn btn-dark btn-lg hours-button">Hours</button>
+        <button href="#" onClick={this.handleMenuClick} className="btn btn-dark btn-lg main-menu-button menu-button">Menu</button>
+        <button href="#" onClick={this.handleHoursClick} className="btn btn-dark btn-lg main-menu-button hours-button">Hours</button>
+        <button href="#" onClick={this.handleLocationClick} className="btn btn-dark btn-lg main-menu-button location-button">Location</button>
+        <button href="#" onClick={this.handleLocationClick} className="btn btn-dark btn-lg main-menu-button about-button">About Us</button>
       </header>
     )
   }

@@ -8,6 +8,7 @@ require('backbone-react-component');
 var IndexComponent = require('./components/index.jsx').IndexComponent;
 var MenuComponent = require('./components/menu.jsx').MenuComponent;
 var HoursComponent = require('./components/hours.jsx').HoursComponent;
+var CheckoutComponent = require('./components/checkout.jsx').CheckoutComponent;
 
 var CartCollection = require('./models/cart.js').CartCollection;
 var cartCollection = new CartCollection();
@@ -20,7 +21,8 @@ var Router = Backbone.Router.extend({
   routes: {
    '': 'indexLoad',
    'menu': 'menuLoad',
-   'hours': 'hoursLoad'
+   'hours': 'hoursLoad',
+   'checkout': 'checkOutLoad'
   },
   indexLoad: function(){
     ReactDOM.render(
@@ -36,12 +38,24 @@ var Router = Backbone.Router.extend({
       }),
       document.getElementById('main-container')
     );
+    $('#menuModal').modal();
   },
   hoursLoad: function(){
     ReactDOM.render(
       React.createElement(HoursComponent),
       document.getElementById('main-container')
     );
+    $('#hoursModal').modal();
+  },
+  checkOutLoad: function(){
+    console.log('checkout');
+    ReactDOM.render(
+      React.createElement(CheckoutComponent, {
+        cartCollection: cartCollection
+      }),
+      document.getElementById('main-container')
+    );
+    $('#checkoutModal').modal();
   }
 });
 
