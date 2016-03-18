@@ -7,6 +7,7 @@ require('backbone-react-component');
 
 var IndexComponent = require('./components/index.jsx').IndexComponent;
 var MenuComponent = require('./components/menu.jsx').MenuComponent;
+var HoursComponent = require('./components/hours.jsx').HoursComponent;
 
 var CartCollection = require('./models/cart.js').CartCollection;
 var cartCollection = new CartCollection();
@@ -18,7 +19,8 @@ menuCollection.add(menu);
 var Router = Backbone.Router.extend({
   routes: {
    '': 'indexLoad',
-   'menu': 'menuLoad'
+   'menu': 'menuLoad',
+   'hours': 'hoursLoad'
   },
   indexLoad: function(){
     ReactDOM.render(
@@ -32,6 +34,12 @@ var Router = Backbone.Router.extend({
         collection: menuCollection,
         cartCollection: cartCollection
       }),
+      document.getElementById('main-container')
+    );
+  },
+  hoursLoad: function(){
+    ReactDOM.render(
+      React.createElement(HoursComponent),
       document.getElementById('main-container')
     );
   }

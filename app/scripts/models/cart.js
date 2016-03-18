@@ -5,7 +5,14 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 
-var CartCollection = Backbone.Collection.extend({});
+var CartCollection = Backbone.Collection.extend({
+    total: function() {
+        var addItems = function(memo, item) {
+          return memo + item.get('price');
+        }
+      return this.reduce(addItems, 0);
+    }
+});
 
   module.exports = {
     CartCollection: CartCollection,

@@ -10,6 +10,7 @@ var SectionComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleAdd: function(item){
     this.props.addItem(item);
+    this.props.cartTotal();
   },
   render: function(){
     var mapMenu = function(item){

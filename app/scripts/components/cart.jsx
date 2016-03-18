@@ -8,13 +8,21 @@ require('backbone-react-component');
 
 var CartComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
+  handleClick: function(item){
+    this.props.removeItem(item);
+    this.props.cartTotal();
+  },
   render: function(){
     var newItem = function(item){
       return (
-      <li className="list-group-item" key={item.get('cid')}>
-        <div className="row">
-          <span className="cart-item-dish col-md-9">{item.get('dish')}</span>
-          <span className="cart-item-price col-md-3">${item.get('price')}</span>
+      <li className="list-group-item cart-items" key={item.get('cid')}>
+        <div className="row cart-row">
+          <div className="col-md-8 cart-item-dish">
+            <span>{item.get('dish')}</span>
+          </div>
+          <div className="col-md-4 cart-item-price">
+            <span>${item.get('price')} <span className="fa fa-times remove-order-btn" onClick={this.handleClick.bind(this, item)}></span></span>
+          </div>
         </div>
       </li>
     )
