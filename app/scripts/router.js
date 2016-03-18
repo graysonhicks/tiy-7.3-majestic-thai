@@ -21,7 +21,6 @@ var Router = Backbone.Router.extend({
    'menu': 'menuLoad'
   },
   indexLoad: function(){
-    console.log(menuCollection);
     ReactDOM.render(
       React.createElement(IndexComponent),
       document.getElementById('main-container')

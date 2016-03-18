@@ -8,9 +8,8 @@ require('backbone-react-component');
 
 var SectionComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
-  handleAdd: function(e){
-    e.preventDefault();
-    console.log('add');
+  handleAdd: function(item){
+    this.props.addItem(item);
   },
   render: function(){
     var mapMenu = function(item){
@@ -22,14 +21,13 @@ var SectionComponent = React.createClass({
               <span>${item.get('price')}</span>
             </div>
             <div className="col-md-1 menu-add-btn-container">
-              <button type="button" className="btn btn-default menu-add-btn" onClick={this.handleAdd}><i className="fa fa-shopping-basket"></i></button>
+              <button type="button" className="btn btn-default menu-add-btn" onClick={this.handleAdd.bind(this, item)}><i className="fa fa-shopping-basket"></i></button>
             </div>
           </div>
         )
       }
 
     var filterMenu = function(item){
-      console.log(this.props.category);
       return item.get('category') == this.props.category
     }
     return (
