@@ -30,12 +30,16 @@ var CheckoutComponent = React.createClass({
   },
   handleSubmit: function(e){
     e.preventDefault();
+    console.log(this.props.orderCollection, 'before');
+    var order = new this.props.orderCollection.model();
     var data = $('#checkout-form-id').serializeArray();
     data = data.reduce(function(acum, i) {
     acum[i.name] = i.value;
     return acum;
     }, {});
-    console.log(data);
+    _.extend(order, data);
+    _.extend(order, this.props.cartCollection.toJSON());
+    Backbone.history.navigate("confirm", {trigger: true});
   },
   handleReturn: function(e){
     e.preventDefault();
@@ -84,17 +88,17 @@ var CheckoutComponent = React.createClass({
                       <div className="credit-card-group">
                         <div className="form-group">
                           <label htmlFor="card-number">Card Number:</label>
-                          <input id="card-number" name="ccnumber" className="form-control" type="text" />
+                          <input id="card-number" maxLength="16" name="ccnumber" className="form-control" type="text" />
                         </div>
                         <div className="form-group" id="cvc-container">
                           <label htmlFor="cvc">CVC:</label>
-                          <input type="text" name="cvcnumber" size="4" id="cvc" className="form-control" />
+                          <input type="text" name="cvcnumber" maxLength="3" id="cvc" className="form-control" />
                         </div>
                         <div className="form-group" id="exp-container">
                           <label htmlFor="cvc">Expiration (MM/YYYY):</label>
-                            <input type="text" size="2" id="expmonth" name="expmonth" className="form-control"/>
+                            <input type="text" size="2" id="expmonth" maxLength="2" name="expmonth" className="form-control"/>
                             <span> / </span>
-                            <input type="text" size="4" id="expyear" name="expyear" className="form-control"/>
+                            <input type="text" size="4" id="expyear" maxLength="4" name="expyear" className="form-control"/>
                         </div>
                       </div>
                     </div>

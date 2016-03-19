@@ -5,6 +5,7 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 
+
 var IndexComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleMenuClick: function(e){
@@ -15,6 +16,10 @@ var IndexComponent = React.createClass({
       e.preventDefault();
       Backbone.history.navigate("hours", {trigger: true});
     },
+  handleLocationClick: function(e){
+      e.preventDefault();
+      Backbone.history.navigate("location", {trigger: true});
+  },
   render: function(){
           return (
       <header>

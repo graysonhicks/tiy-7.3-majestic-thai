@@ -9,7 +9,11 @@ var IndexComponent = require('./components/index.jsx').IndexComponent;
 var MenuComponent = require('./components/menu.jsx').MenuComponent;
 var HoursComponent = require('./components/hours.jsx').HoursComponent;
 var CheckoutComponent = require('./components/checkout.jsx').CheckoutComponent;
+var ConfirmComponent = require('./components/confirm.jsx').ConfirmComponent;
+var LocationComponent = require('./components/location.jsx').LocationComponent;
 
+var OrderCollection = require('./models/order.js').OrderCollection;
+var orderCollection = new OrderCollection();
 var CartCollection = require('./models/cart.js').CartCollection;
 var cartCollection = new CartCollection();
 var MenuCollection = require('./models/menu.js').MenuCollection;
@@ -22,7 +26,9 @@ var Router = Backbone.Router.extend({
    '': 'indexLoad',
    'menu': 'menuLoad',
    'hours': 'hoursLoad',
-   'checkout': 'checkOutLoad'
+   'checkout': 'checkOutLoad',
+   'confirm': 'confirmLoad',
+   'location': 'locationLoad'
   },
   indexLoad: function(){
     ReactDOM.render(
@@ -47,15 +53,30 @@ var Router = Backbone.Router.extend({
     );
     $('#hoursModal').modal();
   },
+  locationLoad: function(){
+    ReactDOM.render(
+      React.createElement(LocationComponent),
+      document.getElementById('main-container')
+    );
+    $('#locationModal').modal();
+  },
   checkOutLoad: function(){
     console.log('checkout');
     ReactDOM.render(
       React.createElement(CheckoutComponent, {
-        cartCollection: cartCollection
+        cartCollection: cartCollection,
+        orderCollection: orderCollection
       }),
       document.getElementById('main-container')
     );
     $('#checkoutModal').modal();
+  },
+  confirmLoad: function(){
+    ReactDOM.render(
+      React.createElement(ConfirmComponent),
+      document.getElementById('main-container')
+    );
+    $('#confirmModal').modal();
   }
 });
 
