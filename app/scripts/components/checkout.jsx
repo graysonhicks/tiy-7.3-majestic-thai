@@ -30,16 +30,22 @@ var CheckoutComponent = React.createClass({
   },
   handleSubmit: function(e){
     e.preventDefault();
-    console.log(this.props.orderCollection, 'before');
     var order = new this.props.orderCollection.model();
-    console.log(order);
-    var data = $('#checkout-form-id').serializeArray();
-    data = data.reduce(function(acum, i) {
+    var customerData = $('#checkout-form-id').serializeArray();
+    customerData = customerData.reduce(function(acum, i) {
     acum[i.name] = i.value;
     return acum;
     }, {});
-    _.extend(order.attributes, data);
-    _.extend(order.attributes, this.props.cartCollection.toJSON());
+    var json = this.props.cartCollection.toJSON();
+    var orderInfo = json.map(function(order){
+      var serverOrder = {
+        dish: order.dish,
+        price: order.price
+      }
+      return serverOrder;
+    });
+    _.extend(order.attributes, customerData);
+    _.extend(order.attributes, orderInfo);
     order.save();
     Backbone.history.navigate("confirm", {trigger: true});
   },

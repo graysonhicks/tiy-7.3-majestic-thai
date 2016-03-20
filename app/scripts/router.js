@@ -13,6 +13,7 @@ var ConfirmComponent = require('./components/confirm.jsx').ConfirmComponent;
 var AboutComponent = require('./components/about.jsx').AboutComponent;
 var LocationComponent = require('./components/location.jsx').LocationComponent;
 var AdminLoginComponent = require('./components/admin-login.jsx').AdminLoginComponent;
+var AdminComponent = require('./components/admin.jsx').AdminComponent;
 
 var OrderCollection = require('./models/order.js').OrderCollection;
 var orderCollection = new OrderCollection();
@@ -32,6 +33,7 @@ var Router = Backbone.Router.extend({
    'confirm': 'confirmLoad',
    'location': 'locationLoad',
    'about': 'aboutLoad',
+   'login': 'loginLoad',
    'admin': 'adminLoad'
   },
   indexLoad: function(){
@@ -89,12 +91,19 @@ var Router = Backbone.Router.extend({
     );
     $('#aboutModal').modal();
   },
-  adminLoad: function(){
+  loginLoad: function(){
     ReactDOM.render(
       React.createElement(AdminLoginComponent),
       document.getElementById('main-container')
     );
     $('#adminLoginModal').modal();
+  },
+  adminLoad: function(){
+    ReactDOM.render(
+      React.createElement(AdminComponent, {orderCollection: orderCollection}),
+      document.getElementById('main-container')
+    );
+    $('#adminModal').modal();
   }
 });
 

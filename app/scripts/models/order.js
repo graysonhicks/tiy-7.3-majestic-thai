@@ -12,6 +12,9 @@ var OrderModel = Backbone.Model.extend({
 var OrderCollection = Backbone.Collection.extend({
 
   url: 'http://tiny-lasagna-server.herokuapp.com/collections/graysonhicksthai/',
+  parse: function(data){
+    return data;
+  },
   model: OrderModel
 });
 

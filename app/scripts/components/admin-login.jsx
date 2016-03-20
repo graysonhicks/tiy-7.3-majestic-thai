@@ -22,6 +22,7 @@ var AdminLoginComponent = React.createClass({
   },
   handleSubmit: function(e){
     e.preventDefault();
+    Backbone.history.navigate("admin", {trigger: true});
   },
   render: function(){
         return (
@@ -51,14 +52,14 @@ var AdminLoginComponent = React.createClass({
                       data-parsley-trigger="change"
                       required=""
                       className="form-control"
-                      id="email-input"
+                      id="password-input"
                       onChange={this.validateForm}
                       placeholder="PASSWORD"
                     />
                   </form>
           </div>
           <div className="modal-footer">
-            <button type="button"
+            <button type="submit"
                form="username-form"
                disabled="true"
                id="username-submit-button"

@@ -22,6 +22,9 @@ h3
 img
   max-width: 100%
 
+.modal-content
+  border-radius: 0px
+
 // parsley
 input.parsley-success,
 select.parsley-success,
@@ -88,9 +91,6 @@ li.parsley-length
 .hours-item
   border: none
 
-.hours-modal-content
-  border-radius: 0px
-
 .hours-close-btn
   border-radius: 0px
 
@@ -99,10 +99,9 @@ li.parsley-length
     font-weight: bold
 // LOCATION MODAL
 
-.location-modal-content,
 .location-close-btn
   border-radius: 0px
-  
+
 // ABOUT MODAL
 
 .main-about-pic
@@ -115,7 +114,6 @@ li.parsley-length
 //MENU MODAL
 
 .menu-modal-content
-  border-radius: 0px
   min-height: 400px
 
 .menu-modal-btn
@@ -231,9 +229,6 @@ li.parsley-length
   textarea
     border-radius: 0px
 
-.checkout-modal-content
-  border-radius: 0px
-
 .checkout-return-btn,
 .place-order-btn
   border-radius: 0px
@@ -280,7 +275,6 @@ li.parsley-length
 #cvc
   padding-left: 5px
 
-.confirm-modal-content,
 .confirm-close-btn
   border-radius: 0px
 
@@ -292,20 +286,38 @@ li.parsley-length
   height: 100%
 
 // ADMIN LOGIN FORM
-.admin-login-modal-content
-  border-radius: 0px
 
-.admin-login-btn
+.admin-login-btn,
+.admin-logout-btn
   border-radius: 0px
 
 #username-form
   width: 100%
 
 #username-input,
-#email-input
+#password-input
   width: 100%
   border-radius: 0px
   text-align: center
   text-transform: uppercase
   font-weight: bold
   margin-bottom: 5px
+
+// ADMIN SCREEN
+
+.admin-modal-dialog
+  width: 1100px
+
+.admin-headings
+  margin-top: 0px
+
+.open-orders-column
+  border-right: 1px solid rgba(158, 155, 155, 0.4)
+
+.open-orders-items
+  border-left: none
+  border-right: none
+  &:first-of-type
+    border-top: none
+  &:last-of-type
+    border-bottom: none
