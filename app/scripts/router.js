@@ -10,7 +10,9 @@ var MenuComponent = require('./components/menu.jsx').MenuComponent;
 var HoursComponent = require('./components/hours.jsx').HoursComponent;
 var CheckoutComponent = require('./components/checkout.jsx').CheckoutComponent;
 var ConfirmComponent = require('./components/confirm.jsx').ConfirmComponent;
+var AboutComponent = require('./components/about.jsx').AboutComponent;
 var LocationComponent = require('./components/location.jsx').LocationComponent;
+var AdminLoginComponent = require('./components/admin-login.jsx').AdminLoginComponent;
 
 var OrderCollection = require('./models/order.js').OrderCollection;
 var orderCollection = new OrderCollection();
@@ -28,7 +30,9 @@ var Router = Backbone.Router.extend({
    'hours': 'hoursLoad',
    'checkout': 'checkOutLoad',
    'confirm': 'confirmLoad',
-   'location': 'locationLoad'
+   'location': 'locationLoad',
+   'about': 'aboutLoad',
+   'admin': 'adminLoad'
   },
   indexLoad: function(){
     ReactDOM.render(
@@ -77,6 +81,20 @@ var Router = Backbone.Router.extend({
       document.getElementById('main-container')
     );
     $('#confirmModal').modal();
+  },
+  aboutLoad: function(){
+    ReactDOM.render(
+      React.createElement(AboutComponent),
+      document.getElementById('main-container')
+    );
+    $('#aboutModal').modal();
+  },
+  adminLoad: function(){
+    ReactDOM.render(
+      React.createElement(AdminLoginComponent),
+      document.getElementById('main-container')
+    );
+    $('#adminLoginModal').modal();
   }
 });
 

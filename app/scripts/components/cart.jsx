@@ -38,6 +38,6 @@ var CartComponent = React.createClass({
   }
 });
 
-  module.exports = {
-    CartComponent: CartComponent
-  }
+module.exports = {
+  CartComponent: CartComponent
+}

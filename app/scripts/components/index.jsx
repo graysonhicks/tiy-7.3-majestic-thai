@@ -20,6 +20,10 @@ var IndexComponent = React.createClass({
       e.preventDefault();
       Backbone.history.navigate("location", {trigger: true});
   },
+  handleAboutClick: function(e){
+      e.preventDefault();
+      Backbone.history.navigate("about", {trigger: true});
+  },
   render: function(){
           return (
       <header>
@@ -28,7 +32,7 @@ var IndexComponent = React.createClass({
         <button href="#" onClick={this.handleMenuClick} className="btn btn-dark btn-lg main-menu-button menu-button">Menu</button>
         <button href="#" onClick={this.handleHoursClick} className="btn btn-dark btn-lg main-menu-button hours-button">Hours</button>
         <button href="#" onClick={this.handleLocationClick} className="btn btn-dark btn-lg main-menu-button location-button">Location</button>
-        <button href="#" onClick={this.handleLocationClick} className="btn btn-dark btn-lg main-menu-button about-button">About Us</button>
+        <button href="#" onClick={this.handleAboutClick} className="btn btn-dark btn-lg main-menu-button about-button">About Us</button>
       </header>
     )
   }
