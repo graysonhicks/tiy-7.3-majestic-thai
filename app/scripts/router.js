@@ -100,7 +100,10 @@ var Router = Backbone.Router.extend({
   },
   adminLoad: function(){
     ReactDOM.render(
-      React.createElement(AdminComponent, {orderCollection: orderCollection}),
+      React.createElement(AdminComponent, {
+        cartCollection: cartCollection,
+        orderCollection: orderCollection
+      }),
       document.getElementById('main-container')
     );
     $('#adminModal').modal();

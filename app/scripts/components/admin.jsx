@@ -9,20 +9,17 @@ var parsley = require('parsleyjs');
 var OpenOrdersComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleClick: function(item){
-    this.props.removeItem(item);
+
   },
   render: function(){
       var newItem = function(item){
+        console.log(item);
         return (
         <li className="list-group-item open-orders-items" key={item.get('_id')}>
           <div className="row open-orders-row">
-            <div className="col-md-8 cart-item-dish">
-              <ul className="list-group">
-              {item.name}
-              </ul>
-            </div>
-            <div className="col-md-4 cart-item-price">
-              <span>$9.99 <span className="fa fa-times remove-order-btn" onClick={this.handleClick.bind(this, item)}></span></span>
+            <div className="col-md-12 cart-item-dish">
+              <h4>{item.attributes.customer.name}</h4>
+              <h5>Total Due: ${item.attributes.totalPrice}</h5>
             </div>
           </div>
         </li>
@@ -51,14 +48,14 @@ var AdminComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   getInitialState: function(){
     return{
-      orders: this.props.orderCollection
+      orders: this.props.orderCollection,
     }
   },
   removeItem: function(item){
-    this.props.collection.remove(item);
-    this.setState({
-      orders: this.props.orderCollection
-    });
+    item.destroy({success: function(){console.log('gone');}});
+    // this.setState({
+    //   orders: this.props.orderCollection
+    // });
   },
   handleReturn: function(e){
     e.preventDefault();
@@ -72,16 +69,17 @@ var AdminComponent = React.createClass({
                   <div className="modal-content admin-login-modal-content">
                     <div className="modal-header">
                       <button type="button" className="close" onClick={this.handleReturn} data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 className="modal-title">Sukho Thai Admin Login</h4>
+                      <h4 className="modal-title">Sukho Thai Open Orders</h4>
                     </div>
                     <div className="modal-body">
                       <div className="row">
                         <div className="col-md-3 open-orders-column">
                           <h2 className="admin-headings">Open Orders</h2>
-                          <OpenOrdersComponent collection={this.state.orders} removeItem={this.removeItem} />
+                          <OpenOrdersComponent collection={this.state.orders} />
                         </div>
                         <div className="col-md-9">
                           <h2 className="admin-headings">Order Details</h2>
+                          <OrderDetailsComponent collection={this.state.orders} />
                         </div>
                       </div>
                     </div>

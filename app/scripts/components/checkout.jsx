@@ -36,17 +36,13 @@ var CheckoutComponent = React.createClass({
     acum[i.name] = i.value;
     return acum;
     }, {});
-    var json = this.props.cartCollection.toJSON(); // trying to add array of objects, each obj is order w/ price and dish
-    var orderInfo = json.map(function(order){
-      var serverOrder = {
-        dish: order.dish,
-        price: order.price
-      }
-      return serverOrder;
+    // trying to add array of objects, each obj is order w/ price and dish
+    var orderInfo = $.extend({}, {
+      orders: this.props.cartCollection.toJSON(),
+      totalPrice: this.state.total,
+      customer: customerData
     });
-    _.extend(order.attributes, customerData);
-    _.extend(order.attributes, orderInfo);
-    order.save();
+    order.save(orderInfo);
     Backbone.history.navigate("confirm", {trigger: true});
   },
   handleReturn: function(e){
