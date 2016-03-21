@@ -23,7 +23,7 @@ var LocationComponent = React.createClass({
           </div>
           <div className="modal-body">
               <h4>Sorry!</h4>
-              <p>Our map is currently under construction!</p>
+            <p>Our map is currently under construction!</p>m
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-default location-close-btn" onClick={this.handleReturn} data-dismiss="modal">Close</button>

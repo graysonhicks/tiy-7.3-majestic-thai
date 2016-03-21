@@ -13,12 +13,13 @@ var OpenOrdersComponent = React.createClass({
   },
   render: function(){
       var newItem = function(item){
-        console.log(item);
         return (
-        <li className="list-group-item open-orders-items" key={item.get('cid')}>
+        <li className="list-group-item open-orders-items" key={item.get('_id')}>
           <div className="row open-orders-row">
             <div className="col-md-8 cart-item-dish">
-              <span>Dish</span>
+              <ul className="list-group">
+              {item.name}
+              </ul>
             </div>
             <div className="col-md-4 cart-item-price">
               <span>$9.99 <span className="fa fa-times remove-order-btn" onClick={this.handleClick.bind(this, item)}></span></span>

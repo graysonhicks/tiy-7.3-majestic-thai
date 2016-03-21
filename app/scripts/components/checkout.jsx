@@ -36,7 +36,7 @@ var CheckoutComponent = React.createClass({
     acum[i.name] = i.value;
     return acum;
     }, {});
-    var json = this.props.cartCollection.toJSON();
+    var json = this.props.cartCollection.toJSON(); // trying to add array of objects, each obj is order w/ price and dish
     var orderInfo = json.map(function(order){
       var serverOrder = {
         dish: order.dish,
