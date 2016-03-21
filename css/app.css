@@ -5852,6 +5852,9 @@ li.parsley-length {
 .location-close-btn {
   border-radius: 0px; }
 
+.location-modal-body {
+  height: 400px; }
+
 .main-about-pic {
   padding-top: 40px; }
 
@@ -6043,17 +6046,37 @@ li.parsley-length {
   width: 1100px; }
 
 .admin-headings {
-  margin-top: 0px; }
+  margin-top: 0px;
+  border-bottom: 1px solid rgba(158, 155, 155, 0.4);
+  padding-bottom: 10px; }
 
 .open-orders-column {
   border-right: 1px solid rgba(158, 155, 155, 0.4); }
 
 .open-orders-items {
+  cursor: pointer;
   border-left: none;
   border-right: none; }
   .open-orders-items:first-of-type {
     border-top: none; }
   .open-orders-items:last-of-type {
     border-bottom: none; }
+
+.open-orders-items.active {
+  background-color: green; }
+
+.order-details-name {
+  text-align: right; }
+
+.order-details-dishes {
+  border-left: none;
+  border-right: none; }
+
+.order-details-for {
+  font-weight: normal;
+  font-size: 15px; }
+
+.order-details-complete-btn {
+  border-radius: 0px; }
 
 /*# sourceMappingURL=app.css.map */
