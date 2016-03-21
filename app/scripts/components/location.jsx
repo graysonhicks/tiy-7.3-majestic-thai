@@ -8,7 +8,6 @@ require('backbone-react-component');
 var google = require('react-google-maps');
 var ScriptjsLoader = require("react-google-maps/lib/async/ScriptjsLoader");
 var GoogleMap = google.GoogleMap;
-var Marker = google.Marker;
 var GoogleMapLoader = google.GoogleMapLoader;
 
 var SimpleMap = React.createClass({
