@@ -313,14 +313,34 @@ li.parsley-length
 
 .admin-headings
   margin-top: 0px
+  border-bottom: 1px solid rgba(158, 155, 155, 0.4)
+  padding-bottom: 10px
 
 .open-orders-column
   border-right: 1px solid rgba(158, 155, 155, 0.4)
 
 .open-orders-items
+  cursor: pointer
   border-left: none
   border-right: none
   &:first-of-type
     border-top: none
   &:last-of-type
     border-bottom: none
+
+.open-orders-items.active
+  background-color: green
+
+.order-details-name
+  text-align: right
+
+.order-details-dishes
+  border-left: none
+  border-right: none
+
+.order-details-for
+  font-weight: normal
+  font-size: 15px
+
+.order-details-complete-btn
+  border-radius: 0px
