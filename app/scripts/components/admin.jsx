@@ -108,11 +108,11 @@ var AdminComponent = React.createClass({
                     </div>
                     <div className="modal-body admin-modal-body">
                       <div className="row">
-                        <div className="col-md-3 open-orders-column">
+                        <div className="col-md-3 col-xs-3 open-orders-column">
                           <h2 className="admin-headings">Open Orders</h2>
                           <OpenOrdersComponent setCurrentOrder={this.setCurrentOrder} collection={this.state.orders} />
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-9 col-xs-9">
                           <h2 className="admin-headings">Order Details</h2>
                           <OrderDetailsComponent currentOrder={this.state.currentOrder} collection={this.state.orders} />
                         </div>
