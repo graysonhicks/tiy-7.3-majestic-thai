@@ -65,10 +65,10 @@ var MenuComponent = React.createClass({
             </div>
             <div className="modal-body">
               <div className="row">
-                <div className="col-md-9 menu-section-info">
+                <div className="col-md-9 col-xs-9 menu-section-info">
                     <SectionComponent collection={this.props.collection} cartTotal={this.cartTotal} addItem={this.addItem} cart={this.state.cartCollection} category={this.state.category}/>
                 </div>
-                <div className="col-md-3 cart-container">
+                <div className="col-md-3 col-xs-3 cart-container">
                     <CartComponent collection={this.state.cartCollection} cartTotal={this.cartTotal} removeItem={this.removeItem}/>
                 </div>
               </div>

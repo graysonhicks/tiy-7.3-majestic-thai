@@ -6,7 +6,6 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 var bootstrap = require('bootstrap-sass/assets/javascripts/bootstrap.js');
-
 var router = require('./router.js');
 
 $(function(){

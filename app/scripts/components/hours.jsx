@@ -23,7 +23,7 @@ var HoursComponent = React.createClass({
             </div>
             <div className="modal-body">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-xs-6">
                   <ul className="list-group days-list">
                     <li className="list-group-item hours-item">
                       <span>Sunday</span>
@@ -48,7 +48,7 @@ var HoursComponent = React.createClass({
                     </li>
                   </ul>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 col-xs-6">
                 <ul className="list-group">
                   <li className="list-group-item hours-item">
                     <span>Closed</span>
