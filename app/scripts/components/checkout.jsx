@@ -4,8 +4,6 @@ var ReactDOM = require('react-dom');
 var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
-var luhn = require('luhn');
-var parsley = require('parsleyjs');
 
 
 var CartComponent = require('./cart.jsx').CartComponent;
@@ -43,6 +41,7 @@ var CheckoutComponent = React.createClass({
       customer: customerData
     });
     order.save(orderInfo);
+    this.props.cartCollection.reset();
     Backbone.history.navigate("confirm", {trigger: true});
   },
   handleReturn: function(e){
@@ -108,7 +107,7 @@ var CheckoutComponent = React.createClass({
                     </div>
                     <fieldset className="form-group">
                       <label htmlFor="comments">Comments:</label>
-                      <textarea className="form-control" id="comments" rows="3" placeholder="Apartment? Extra spicy? Let us know."></textarea>
+                      <textarea className="form-control" id="comments" name="comments" rows="3" placeholder="Apartment? Extra spicy? Let us know."></textarea>
                     </fieldset>
                   </form>
                 </div>

@@ -9,6 +9,7 @@ var ConfirmComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleReturn: function(e){
     e.preventDefault();
+    $('.modal-backdrop').hide();
     Backbone.history.navigate("", {trigger: true});
   },
   render: function(){

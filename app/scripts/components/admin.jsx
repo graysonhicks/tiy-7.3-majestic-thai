@@ -49,10 +49,14 @@ var OrderDetailsComponent = React.createClass({
         }
         return(
           <div>
-            <h2 className="order-details-name"><span className="order-details-for">for: </span>{item.attributes.customer.name}</h2>
+            <h2 className="order-details-name">
+              <span className="order-details-for">for: </span>{item.attributes.customer.name}
+            </h2>
+            <span></span>
             <ul className="list-group">
               {(item.attributes.orders.map(mapDishes.bind(this)))}
             </ul>
+            <div className="customer-comments">{item.attributes.customer.comments}</div>
             <h4>Total Due: ${item.attributes.totalPrice}</h4>
             <button type="button" className="btn btn-success btn-lg order-details-complete-btn btn-block">Complete!</button>
           </div>
@@ -116,7 +120,8 @@ var AdminComponent = React.createClass({
                     </div>
                     <div className="modal-footer">
                       <button type="button"
-                        onClick={this.handleReturn} 
+                        onClick={this.handleReturn}
+                        data-dismiss="modal"
                          id="admin-logout"
                         className="btn btn-danger admin-logout-btn"
                         >Logout</button>

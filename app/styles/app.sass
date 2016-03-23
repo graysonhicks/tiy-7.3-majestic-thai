@@ -311,6 +311,8 @@ li.parsley-length
 .admin-modal-dialog
   width: 1100px
 
+
+
 .admin-headings
   margin-top: 0px
   border-bottom: 1px solid rgba(158, 155, 155, 0.4)
@@ -318,6 +320,12 @@ li.parsley-length
 
 .open-orders-column
   border-right: 1px solid rgba(158, 155, 155, 0.4)
+  padding-right: 0px
+
+.open-orders-list
+  max-height: 360px
+  overflow-y: scroll
+  margin-bottom: 1px
 
 .open-orders-items
   cursor: pointer
@@ -337,6 +345,16 @@ li.parsley-length
 .order-details-dishes
   border-left: none
   border-right: none
+  cursor: pointer
+  &:first-of-type
+    border-top: none
+  .complete
+    background-color: green
+
+.detailed-order
+  ul
+    padding-left: 200px
+    padding-right: 200px
 
 .order-details-for
   font-weight: normal
@@ -344,3 +362,6 @@ li.parsley-length
 
 .order-details-complete-btn
   border-radius: 0px
+
+.customer-comments
+  text-align: left
