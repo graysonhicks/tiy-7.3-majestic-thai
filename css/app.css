@@ -5762,6 +5762,46 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+@media (max-width: 736px) {
+  div#main-container {
+    padding-top: 100px; }
+
+  .menu-modal-dialog,
+  .admin-modal-dialog {
+    max-width: 95%; }
+
+  .menu-add-btn-container,
+  .item-descriptions {
+    display: inline; }
+
+  .cart-container h4 {
+    font-size: 14px; }
+
+  div.order-total-column {
+    padding-right: 15px; }
+
+  .detailed-order .list-group {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .admin-login-modal-container {
+    padding-left: 5px; }
+
+  div#adminModal.modal.fade.admin-login-modal-container.in {
+    padding-left: 5px; }
+
+  .checkout-order-total-column {
+    padding-bottom: 5px; }
+
+  .admin-modal-body h2 {
+    font-size: 14px; }
+  .admin-modal-body h4 {
+    font-size: 12px; }
+  .admin-modal-body h5 {
+    font-size: 10px; }
+
+  .open-orders-column {
+    padding-left: 5px; } }
 *,
 *::before,
 *::after {
